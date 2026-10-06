@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  /* =========================================================
+     APFA SUPER ADMIN — MATERIAL SYSTEM
+     ========================================================= */
+
+  --apfa-admin-powder: #d8d6d1;
+  --apfa-admin-card: #2f2f2c;
+  --apfa-admin-shadow: #080503;
+
+  /* Operational accent */
+  --apfa-admin-ember: #cc7547;
+
+  /* System states */
+  --apfa-admin-success: #4f8a58;
+  --apfa-admin-warning: #b3833e;
+  --apfa-admin-information: #587d9c;
+  --apfa-admin-error: #a94d45;
+
+  /* Typography */
+  --apfa-admin-ink: #292824;
+  --apfa-admin-muted: #68655e;
+  --apfa-admin-paper: #eeece6;
+
+  /* Geometry */
+  --apfa-admin-radius: 18px;
+  --apfa-admin-shell-width: 1440px;
+
+  /* Physical depth */
+  --apfa-admin-shadow-raised:
+    12px 12px 24px var(--apfa-admin-shadow),
+    -8px -8px 18px rgba(255, 255, 255, 0.34);
+
+  --apfa-admin-shadow-pressed:
+    inset 6px 6px 12px rgba(8, 5, 3, 0.72),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.18);
+
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: var(--apfa-admin-ink);
+  background: var(--apfa-admin-powder);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--apfa-admin-powder);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--apfa-admin-powder);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--apfa-admin-ember);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   APFA ADMIN TYPOGRAPHY
+   ========================================================= */
+
+.apfa-admin-editorial {
+  font-family:
+    "EB Garamond",
+    Georgia,
+    serif;
+}
+
+.apfa-admin-interface {
+  font-family:
+    "Inter",
+    system-ui,
+    sans-serif;
+}
+
+.apfa-admin-mono,
+.apfa-admin-numeric {
+  font-family:
+    "JetBrains Mono",
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+}
+
+.apfa-admin-kicker {
+  font-family:
+    "JetBrains Mono",
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.apfa-admin-numeric {
+  font-variant-numeric: tabular-nums;
+}
+
+/* =========================================================
+   APFA ADMIN SHELL
+   ========================================================= */
+
+.apfa-admin-shell {
+  width: min(
+    calc(100% - 32px),
+    var(--apfa-admin-shell-width)
+  );
+
+  margin-inline: auto;
+}
+
+/* =========================================================
+   PHYSICAL OBJECTS
+   ========================================================= */
+
+.apfa-admin-object {
+  background: var(--apfa-admin-card);
+  border-radius: var(--apfa-admin-radius);
+  box-shadow: var(--apfa-admin-shadow-raised);
+}
+
+.apfa-admin-object-flat {
+  background: var(--apfa-admin-card);
+  border-radius: var(--apfa-admin-radius);
+}
+
+.apfa-admin-raised {
+  box-shadow: var(--apfa-admin-shadow-raised);
+}
+
+.apfa-admin-pressed {
+  box-shadow: var(--apfa-admin-shadow-pressed);
+}
+
+/* =========================================================
+   PHYSICAL CONTROLS
+   ========================================================= */
+
+.apfa-admin-control {
+  border: 0;
+  border-radius: 14px;
+
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    background-color 120ms ease;
+}
+
+.apfa-admin-control:hover {
+  transform: translateY(-1px);
+}
+
+.apfa-admin-control:active {
+  transform: translateY(1px);
+  box-shadow: var(--apfa-admin-shadow-pressed);
+}
+
+/* =========================================================
+   MATERIAL UTILITIES
+   ========================================================= */
+
+.apfa-admin-substrate {
+  background: var(--apfa-admin-powder);
+}
+
+.apfa-admin-card {
+  background: var(--apfa-admin-card);
+}
+
+.apfa-admin-ember {
+  color: var(--apfa-admin-ember);
+}
+
+.apfa-admin-muted {
+  color: var(--apfa-admin-muted);
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* =========================================================
+   MOBILE SHELL
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .apfa-admin-shell {
+    width: min(
+      calc(100% - 20px),
+      var(--apfa-admin-shell-width)
+    );
+  }
+}
